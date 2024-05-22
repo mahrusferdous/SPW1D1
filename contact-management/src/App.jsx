@@ -1,12 +1,12 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import "./App.css";
-import UserContext from "./context/UserContext";
 import UserDisplay from "./components/UserDisplay";
 import UserDetails from "./components/UserDetails";
 import ProductList from "./components/ProductList";
+import UserContext from "./context/UserContext";
 
 function App() {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({ name: "", email: "" });
 
     return (
         <UserContext.Provider value={{ user, setUser }}>

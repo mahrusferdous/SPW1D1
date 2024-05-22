@@ -11,14 +11,15 @@ function UserDisplay() {
     ];
 
     const handleUser = (user) => () => {
-        setUser(user);
+        setUser({ name: user.name, email: user.email });
     };
 
     return (
         <div>
             {contact.map((u, index) => (
                 <div key={index}>
-                    <p onClick={handleUser(u)}>Name: {u.name}</p>
+                    <p>Name: {u.name}</p>
+                    <button onClick={handleUser(u)}>Button</button>
                 </div>
             ))}
         </div>
